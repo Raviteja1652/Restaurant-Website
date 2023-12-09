@@ -2,9 +2,9 @@ import './MealItem.css';
 import MealItemForm from './MealItemForm';
 
 const MealItem = (props) => {
-    const price = `₹${props.price}`
+    const price = `₹${props.price.toFixed(2)}`
     return (
-        <li className='meal' key={props.id}>
+        <li className='meal'>
             <div>
                 <h3>{props.name}</h3>
                 <div className='description'>{props.description}</div>
@@ -12,7 +12,7 @@ const MealItem = (props) => {
             </div>
                 
             <div>
-                <MealItemForm />
+                <MealItemForm id={props.id} sending={props.sending} item={props}/>
             </div>
         </li>
     )

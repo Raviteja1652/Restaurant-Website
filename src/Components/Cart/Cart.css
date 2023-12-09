@@ -16,7 +16,7 @@
 }
   
 .actions {
-    text-align: right;
+    text-align: right; 
 }
   
 .actions button {
@@ -40,7 +40,7 @@
     color: #8a2b06;
 }
 
-.actions .button {
+.actions .orderButton {
     background-color: #8a2b06;
     color: white;
 }

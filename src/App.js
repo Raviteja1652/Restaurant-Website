@@ -13,13 +13,16 @@ function App() {
   const closeCartHandler = () => {
     setCartEnable(false)
   };
+  const sample = (bool) => {
+    setCartEnable(bool)
+  }
 
   return (
     <CartProvider>
       {cartEnable && <Cart onHideCart={closeCartHandler}/>}
       <Header onShowCart={openCartHandler}></Header>
       <main>
-        <Meals />
+        <Meals sending={sample} />
       </main>
     </CartProvider>
   );

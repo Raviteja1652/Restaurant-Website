@@ -5,9 +5,13 @@ import CartContext from '../../store/React-Context';
 
 const CartButton = (props) => {
     const ctx = useContext(CartContext);
-    const numberOfItemsInCart = ctx.items.reduce((currNumber, item) => {
-        return currNumber + item.amount;
-    }, 0)
+    // const numberOfItemsInCart = ctx.items.reduce((currNumber, item) => {
+    //     return currNumber + item.amount;
+    // }, 0)
+    let numberOfItemsInCart = 0;
+    ctx.items.forEach(item => {
+        numberOfItemsInCart = numberOfItemsInCart + item.quantity
+    });
 
     return(
         <button className='button' onClick={props.onClick}>
@@ -18,6 +22,6 @@ const CartButton = (props) => {
             <span className='badge'>{numberOfItemsInCart}</span>
         </button>
     )
-};
+}; 
 
 export default CartButton;
