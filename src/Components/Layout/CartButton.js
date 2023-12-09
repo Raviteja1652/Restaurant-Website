@@ -7,7 +7,7 @@ const CartButton = (props) => {
     const ctx = useContext(CartContext);
     // const numberOfItemsInCart = ctx.items.reduce((currNumber, item) => {
     //     return currNumber + item.amount;
-    // }, 0)
+    // }, 0) 
     let numberOfItemsInCart = 0;
     ctx.items.forEach(item => {
         numberOfItemsInCart = numberOfItemsInCart + item.quantity

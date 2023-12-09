@@ -7,14 +7,7 @@ const MealItemForm = (props) => {
     const submitHandler = (e) => {
         e.preventDefault()
         const quantity = document.getElementById(`quantity_${props.id}`).value
-
         // props.sending(true)
-        // added))console.log(e.target)
-        // CartContext.items.push(props.item)
-        // cartCtx.addItem({...props.item, quantity: +quantity})
-        // cartCtx.items.forEach((evrItem) => 
-        //     evrItem.id === props.item.id ? evrItem.quantity = evrItem.quantity + (+quantity) :
-        // )
         const existingItemIndex = cartCtx.items.findIndex(item => item.id === props.item.id)
         if (existingItemIndex !== -1) {
             cartCtx.updateItem(existingItemIndex, quantity)
@@ -22,10 +15,6 @@ const MealItemForm = (props) => {
             cartCtx.addItem({...props.item, quantity: +quantity})
         }
     }
-    // {
-    //     if(evrItem.id === props.item.id) {
-    //         evrItem.quantity = evrItem.quantity
-    //     }
 
     return(
         <form className='form'>

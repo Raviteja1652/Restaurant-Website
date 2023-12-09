@@ -5,7 +5,6 @@ const CartProvider = (props) => {
     const [menuItems, setMenuItems] = useState([])
 
     const addItemToCartHandler = (item) => {
-        // cartContext.items.push(item)
         setMenuItems([...menuItems, item])
         // setMenuItems((prevItems) => {
         //     const updatedItems = [...prevItems, item]
@@ -29,10 +28,6 @@ const CartProvider = (props) => {
     };
 
     const updateItemHandler = (index, quantity) => {
-        // menuItems[index].quantity += (+quantity)
-        // const updatedMenuItems = [...menuItems]
-        // updatedMenuItems[index].quantity += (+quantity)
-        // return updatedMenuItems
         setMenuItems((prevItems) => {
             const updatedItems = [...prevItems]
             updatedItems[index].quantity += (+quantity)
@@ -53,7 +48,6 @@ const CartProvider = (props) => {
 
     const cartContext = {
         items: menuItems,
-        totalAmount: 0,
         addItem: addItemToCartHandler,
         removeItem: removeItemFromCartHandler,
         updateItem: updateItemHandler,
